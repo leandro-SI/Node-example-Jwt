@@ -1,7 +1,7 @@
 const Express = require('express')
 const bodyParser = require('body-parser')
 
-const { verifyToken, protectRoute } = require('./middlewares/auth')
+const { verifyToken, protectRoute }  = require('./middlewares/auth')
 const generateToken = require('./services/auth')
 
 const app = Express()
@@ -9,6 +9,7 @@ const port = 3000
 
 app.set('json spaces', 2);
 app.use(bodyParser.urlencoded({ extended: false }))
+//app.use(protectRoute)
 app.use(verifyToken)
 
 app.get('/', (req, res) => res.send('Olá mundo pelo Express!'))
@@ -25,7 +26,7 @@ app.post('/login', (req, res) => {
         name: 'Nome Usuário',
         roles: ['admin']
     }
-    const token = generateToken(payload)
+    const token = generateToken.generateToken(payload)
 
     res.send({
         token
