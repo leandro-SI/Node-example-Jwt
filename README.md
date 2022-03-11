@@ -1,5 +1,5 @@
 # Node-example-Jwt
-Exemplo de uma API em Node.js utilizando JWT (JSON Web Token) para segurança de envio das informações
+Exemplo de uma API em Node.js utilizando JWT (JSON Web Token) para segurança de envio das informações e autenticação
 
 ## Instalar dependências
 ```
